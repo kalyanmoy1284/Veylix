@@ -115,7 +115,7 @@ function CustomerOrderDetails() {
 
       const response =
         await fetch(
-          "http://localhost:5000/api/customer/orders",
+          "https://veylix-backend-production.up.railway.app/api/customer/orders",
           {
             method: "GET",
             headers: {
@@ -230,7 +230,7 @@ function CustomerOrderDetails() {
 
       const response =
         await fetch(
-          "http://localhost:5000/api/returns",
+          "https://veylix-backend-production.up.railway.app/api/returns",
           {
             method: "GET",
             headers: token
@@ -350,7 +350,7 @@ function CustomerOrderDetails() {
 
         const response =
           await fetch(
-            `http://localhost:5000/api/orders/${order.id}/cancel`,
+            `https://veylix-backend-production.up.railway.app/api/orders/${order.id}/cancel`,
             {
               method: "PUT",
               headers: {
@@ -533,7 +533,7 @@ function CustomerOrderDetails() {
 
         const response =
           await fetch(
-            "http://localhost:5000/api/returns",
+            "https://veylix-backend-production.up.railway.app/api/returns",
             {
               method: "POST",
               headers: {

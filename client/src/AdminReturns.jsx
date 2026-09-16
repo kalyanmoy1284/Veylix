@@ -20,7 +20,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 
-const API_BASE = "http://localhost:5000/api";
+const API_BASE = "https://veylix-backend-production.up.railway.app/api";
 
 function AdminReturns() {
   const navigate = useNavigate();

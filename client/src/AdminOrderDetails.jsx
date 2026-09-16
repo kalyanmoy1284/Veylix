@@ -136,7 +136,7 @@ function AdminOrderDetails() {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/returns",
+        "https://veylix-backend-production.up.railway.app/api/returns",
         {
           method: "GET",
           headers: {
@@ -199,7 +199,7 @@ function AdminOrderDetails() {
       }
 
       const response = await fetch(
-        `http://localhost:5000/api/orders/${encodeURIComponent(
+        `https://veylix-backend-production.up.railway.app/api/orders/${encodeURIComponent(
           orderNumber
         )}`,
         {
@@ -309,7 +309,7 @@ function AdminOrderDetails() {
       }
 
       const response = await fetch(
-        `http://localhost:5000/api/orders/${order.id}/status`,
+        `https://veylix-backend-production.up.railway.app/api/orders/${order.id}/status`,
         {
           method: "PUT",
           headers: {
@@ -403,7 +403,7 @@ function AdminOrderDetails() {
       }
 
       const response = await fetch(
-        `http://localhost:5000/api/orders/${order.id}/cancel`,
+        `https://veylix-backend-production.up.railway.app/api/orders/${order.id}/cancel`,
         {
           method: "PUT",
           headers: {
@@ -532,7 +532,7 @@ function AdminOrderDetails() {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/returns",
+        "https://veylix-backend-production.up.railway.app/api/returns",
         {
           method: "POST",
           headers: {

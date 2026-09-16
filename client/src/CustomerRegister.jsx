@@ -124,7 +124,7 @@ function CustomerRegister() {
       setError("");
 
       const response = await fetch(
-        "http://localhost:5000/api/auth/customer/register",
+        "https://veylix-backend-production.up.railway.app/api/auth/customer/register",
         {
           method: "POST",
           headers: {

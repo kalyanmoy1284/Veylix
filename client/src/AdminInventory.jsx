@@ -47,7 +47,7 @@ function AdminInventory() {
       setError("");
 
       const response = await fetch(
-        "http://localhost:5000/api/products"
+        "https://veylix-backend-production.up.railway.app/api/products"
       );
 
       const data = await response.json();

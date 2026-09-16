@@ -135,7 +135,7 @@ function AdminProducts() {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/products/admin",
+        "https://veylix-backend-production.up.railway.app/api/products/admin",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -203,7 +203,7 @@ function AdminProducts() {
 
         const response =
           await fetch(
-            "http://localhost:5000/api/products/categories",
+            "https://veylix-backend-production.up.railway.app/api/products/categories",
             {
               headers: {
                 Authorization: `Bearer ${token}`,
@@ -603,7 +603,7 @@ function AdminProducts() {
       formData.append("image", file);
 
       const response = await fetch(
-        "http://localhost:5000/api/uploads/product-image",
+        "https://veylix-backend-production.up.railway.app/api/uploads/product-image",
         {
           method: "POST",
           headers: {
@@ -713,8 +713,8 @@ function AdminProducts() {
         );
 
       const url = editing
-        ? `http://localhost:5000/api/products/${editingProduct.id}`
-        : "http://localhost:5000/api/products";
+        ? `https://veylix-backend-production.up.railway.app/api/products/${editingProduct.id}`
+        : "https://veylix-backend-production.up.railway.app/api/products";
 
       const response =
         await fetch(url, {
@@ -827,7 +827,7 @@ function AdminProducts() {
 
         const response =
           await fetch(
-            `http://localhost:5000/api/products/${product.id}/status`,
+            `https://veylix-backend-production.up.railway.app/api/products/${product.id}/status`,
             {
               method:
                 "PATCH",

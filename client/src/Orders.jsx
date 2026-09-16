@@ -55,7 +55,7 @@ function Orders() {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/customer/orders",
+        "https://veylix-backend-production.up.railway.app/api/customer/orders",
         {
           method: "GET",
           headers: {

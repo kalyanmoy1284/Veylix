@@ -631,7 +631,7 @@ function Checkout() {
 
       const response =
         await fetch(
-          "http://localhost:5000/api/orders",
+          "https://veylix-backend-production.up.railway.app/api/orders",
           {
             method: "POST",
 

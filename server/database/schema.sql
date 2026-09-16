@@ -1,7 +1,3 @@
-CREATE DATABASE IF NOT EXISTS veylix_db;
-
-USE veylix_db;
-
 
 -- =========================================
 -- USERS

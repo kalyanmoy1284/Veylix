@@ -77,7 +77,7 @@ function AdminPOS() {
         setError("");
 
         const response = await fetch(
-          "http://localhost:5000/api/products"
+          "https://veylix-backend-production.up.railway.app/api/products"
         );
 
         const data =
@@ -502,7 +502,7 @@ function AdminPOS() {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/orders",
+        "https://veylix-backend-production.up.railway.app/api/orders",
         {
           method: "POST",
 
@@ -544,7 +544,7 @@ function AdminPOS() {
       try {
         const productsResponse =
           await fetch(
-            "http://localhost:5000/api/products"
+            "https://veylix-backend-production.up.railway.app/api/products"
           );
 
         const productsData =

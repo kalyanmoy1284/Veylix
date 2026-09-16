@@ -75,7 +75,7 @@ function Shop() {
         setError("");
 
         const response = await fetch(
-          "http://localhost:5000/api/products"
+          "https://veylix-backend-production.up.railway.app/api/products"
         );
 
         if (!response.ok) {

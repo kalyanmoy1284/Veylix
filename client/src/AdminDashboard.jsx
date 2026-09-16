@@ -98,7 +98,7 @@ function AdminDashboard() {
           returnsResponse,
         ] = await Promise.all([
           fetch(
-            "http://localhost:5000/api/orders",
+            "https://veylix-backend-production.up.railway.app/api/orders",
             {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem(
@@ -109,11 +109,11 @@ function AdminDashboard() {
           ),
 
           fetch(
-            "http://localhost:5000/api/products"
+            "https://veylix-backend-production.up.railway.app/api/products"
           ),
 
           fetch(
-            "http://localhost:5000/api/returns",
+            "https://veylix-backend-production.up.railway.app/api/returns",
             {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem(

@@ -1,0 +1,21 @@
+1. In `server` folder run:
+
+   npm install multer
+
+2. Create:
+
+   `server/src/routes/productImageUploadRoutes.js`
+
+   Paste the supplied `productImageUploadRoutes.js` code there.
+
+3. In `server/src/server.js` add near the other require lines:
+
+   const path = require("path");
+   const productImageUploadRoutes = require("./routes/productImageUploadRoutes");
+
+4. In `server/src/server.js` add before `app.listen(...)`:
+
+   app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
+   app.use("/api/uploads", productImageUploadRoutes);
+
+The existing product create/edit/status APIs stay unchanged. AdminProducts now uploads the selected image to the backend and stores the returned `/uploads/products/...` path in the existing `products.image` field.

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Veylix mark">
+  <rect width="120" height="120" rx="28" fill="#0B0B0B"/>
+  <g transform="translate(15 12)">
+    <path d="M0 0h25l32 72H33z" fill="#F4F4F4"/>
+    <path d="M15 0h22l29 61H40z" fill="#D4AF37"/>
+    <path d="M31 0h20L28 72H7z" fill="#BDBDBD"/>
+  </g>
+</svg>

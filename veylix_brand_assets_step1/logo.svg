@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150" role="img" aria-labelledby="title desc">
+  <title id="title">Veylix logo</title>
+  <desc id="desc">Premium Veylix logo with gold V mark and wordmark.</desc>
+  <rect width="520" height="150" rx="18" fill="#ffffff"/>
+  <g transform="translate(24 20)">
+    <path d="M0 0h32l42 88H42z" fill="#0B0B0B"/>
+    <path d="M20 0h30l37 76H55z" fill="#D4AF37"/>
+    <path d="M45 0h28L37 88H9z" fill="#222222"/>
+  </g>
+  <text x="142" y="76" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700" fill="#0B0B0B">Veylix</text>
+  <text x="145" y="111" font-family="Arial, Helvetica, sans-serif" font-size="12" letter-spacing="5" fill="#777777">TECH FOR A BETTER YOU</text>
+</svg>

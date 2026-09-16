@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" role="img" aria-label="Veylix watermark">
+  <g opacity="0.08">
+    <path d="M180 20h95l125 260H275z" fill="#0B0B0B"/>
+    <path d="M235 20h90l110 230H340z" fill="#D4AF37"/>
+    <path d="M300 20h80L260 280H180z" fill="#0B0B0B"/>
+    <text x="390" y="170" font-family="Arial, Helvetica, sans-serif" font-size="74" font-weight="700" fill="#0B0B0B">Veylix</text>
+  </g>
+</svg>

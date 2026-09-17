@@ -11,8 +11,8 @@ import {
 import App from "./App";
 import ProductDetails from "./ProductDetails";
 import Cart from "./Cart/Cart";
-import Shop from "./Shop/Shop";
-import Wishlist from "./Wishlist";
+import Shop from "./shop/shop";
+import Wishlist from "./wishlist";
 import Checkout from "./Checkout";
 import OrderSuccess from "./OrderSuccess";
 import Orders from "./Orders";
@@ -23,6 +23,7 @@ import CustomerOrderDetails from "./CustomerOrderDetails";
 
 import AdminLogin from "./AdminLogin";
 import AdminDashboard from "./AdminDashboard";
+import AdminCreateAccount from "./AdminCreateAccount";
 import AdminProducts from "./AdminProducts";
 import AdminInventory from "./AdminInventory";
 import AdminPOS from "./AdminPOS";
@@ -167,6 +168,18 @@ ReactDOM.createRoot(
           <Route
             path="/admin/login"
             element={<AdminLogin />}
+          />
+
+          <Route
+            path="/admin/create-account"
+            element={
+              <ProtectedRoute
+                tokenKey="veylix_admin_token"
+                loginPath="/admin/login"
+              >
+                <AdminCreateAccount />
+              </ProtectedRoute>
+            }
           />
 
           {/* ================================

@@ -546,4 +546,134 @@ router.post(
   }
 );
 
+
+/* =====================================================
+   CREATE ADMIN / STAFF ACCOUNT
+   Only an existing ADMIN can create staff accounts.
+===================================================== */
+
+router.post("/admin/create", async (req, res) => {
+  try {
+    const authHeader = req.headers.authorization || "";
+
+    if (!authHeader.startsWith("Bearer ")) {
+      return res.status(401).json({
+        success: false,
+        message: "Authentication required.",
+      });
+    }
+
+    const token = authHeader.split(" ")[1];
+    let decoded;
+
+    try {
+      decoded = jwt.verify(token, process.env.JWT_SECRET);
+    } catch {
+      return res.status(401).json({
+        success: false,
+        message: "Invalid or expired token.",
+      });
+    }
+
+    if (
+      decoded.accountType !== "admin" ||
+      decoded.role !== "admin"
+    ) {
+      return res.status(403).json({
+        success: false,
+        message: "Only admin can create staff accounts.",
+      });
+    }
+
+    const { name, email, password, role } = req.body;
+
+    const cleanName = String(name || "").trim();
+    const cleanEmail = String(email || "").trim().toLowerCase();
+    const cleanRole = String(role || "").trim().toLowerCase();
+
+    if (!cleanName || !cleanEmail || !password || !cleanRole) {
+      return res.status(400).json({
+        success: false,
+        message: "Name, email, password and role are required.",
+      });
+    }
+
+    const allowedRoles = ["admin", "manager", "employee"];
+
+    if (!allowedRoles.includes(cleanRole)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid role.",
+      });
+    }
+
+    if (String(password).length < 6) {
+      return res.status(400).json({
+        success: false,
+        message: "Password must be at least 6 characters.",
+      });
+    }
+
+    if (!/^\S+@\S+\.\S+$/.test(cleanEmail)) {
+      return res.status(400).json({
+        success: false,
+        message: "Enter a valid email address.",
+      });
+    }
+
+    const [existing] = await db.query(
+      `
+      SELECT id
+      FROM users
+      WHERE email = ?
+      LIMIT 1
+      `,
+      [cleanEmail]
+    );
+
+    if (existing.length > 0) {
+      return res.status(409).json({
+        success: false,
+        message: "An account already exists with this email.",
+      });
+    }
+
+    const hashedPassword = await bcrypt.hash(String(password), 10);
+
+    const [result] = await db.query(
+      `
+      INSERT INTO users
+      (
+        name,
+        email,
+        password,
+        role,
+        is_active
+      )
+      VALUES (?, ?, ?, ?, 1)
+      `,
+      [cleanName, cleanEmail, hashedPassword, cleanRole]
+    );
+
+    return res.status(201).json({
+      success: true,
+      message: "Staff account created successfully.",
+      user: {
+        id: result.insertId,
+        name: cleanName,
+        email: cleanEmail,
+        role: cleanRole,
+      },
+    });
+  } catch (error) {
+    console.error("Admin account creation error:", error);
+
+    return res.status(500).json({
+      success: false,
+      message: "Account creation failed.",
+      error: error.message,
+    });
+  }
+});
+
 module.exports = router;

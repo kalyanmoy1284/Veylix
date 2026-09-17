@@ -1156,6 +1156,19 @@ function AdminDashboard() {
             Customers
           </button>
 
+          <button
+            type="button"
+            className="admin-nav-item"
+            onClick={() =>
+              navigate(
+                "/admin/create-account"
+              )
+            }
+          >
+            <Users size={18} />
+            Create Account
+          </button>
+
         </nav>
 
         <div className="admin-sidebar-bottom">
